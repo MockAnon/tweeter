@@ -1,0 +1,67 @@
+
+#header {
+  font-size: 70px;
+
+}
+
+#nav-bar {
+  background-color: #00a087;
+  color: #e8fdff;
+
+
+
+  padding-left:2em;
+  padding-right:2em;
+  padding-top:0em;
+  padding-bottom:0em;
+
+  height: 80px;
+  width: 100%;
+
+
+  margin-top: 0%;
+
+  position: relative;
+
+
+}
+
+#nav-bar .logo{
+width:80px;
+height:80px;
+float:left;
+}
+
+
+#nav-bar .header{
+  margin-top: 35px;
+  margin-left:10px;
+
+  line-height: 10px;
+
+  display: inline;
+
+  font-size: 40px;
+  vertical-align: middle;
+  float:left;
+
+
+}
+
+/*main. --- Most important container*/
+main.container {
+  padding-top: 0.2em;
+  width: 450px;
+  /*text-align: center;*/
+  background-color: white;
+
+  /*background-color: pink;*/
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:40px;
+  border-radius: 2px;
+  padding-bottom: 100%;
+
+
+
+}

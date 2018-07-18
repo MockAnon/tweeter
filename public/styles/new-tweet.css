@@ -1,0 +1,154 @@
+.container main {
+
+
+}
+
+textarea{
+
+  width:100%;
+  order: 1;
+  padding:2;
+
+}
+
+button, html [type="button"], [type="reset"], [type="submit"]{
+/*  position: relative;
+  right: 150px;*/
+  float: left;
+
+}
+
+
+span.counter{
+  /*position: relative;*/
+  /*left: 150px;*/
+  float:right;
+  margin-bottom:auto;
+
+}
+
+
+span.counter{
+  color: red;
+
+}
+
+
+
+
+
+
+
+
+
+
+.new-tweet {
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+  margin-bottom: 1em;
+  margin-top:40px;
+
+  border-radius: 10px;
+  border-style: groove;
+  background-color: #EEEEEE;
+  overflow: hidden;
+  padding:0.5em;
+
+}
+
+.new-tweet h2 {
+  padding-right: 2em;
+  padding-left: 2em;
+  border-bottom: 1px solid #000;
+  border-bottom-width: 1px;
+
+}
+
+/*_______________________posted tweet________________________*/
+
+article.tweet {
+  margin-right: 0.4em;
+  margin-left: 0.4em;
+  margin-bottom: 2em;
+  /*margin-top:40px;*/
+
+  /*padding:0.5em;*/
+
+  border-radius: 10px;
+  border-style: groove;
+  background-color: #F3F3F3;
+  overflow: hidden;
+  opacity: 0.9;
+  /*border-color: grey;*/
+
+}
+
+/*____________THUMBNAILSSS_______________*/
+
+.thumb{
+  float:left;
+width:60px;
+height:60px;
+padding: 5px;
+border-radius: 10px;
+}
+
+
+article.tweet span{
+overflow: hidden;
+
+}
+
+
+article.tweet:hover {
+  border-width: 4px;
+  background-color: #EEEEEE;
+  opacity: 1;
+
+}
+
+article.tweet h1 {
+  /*background-color: #EEEEEE;*/
+  padding: 10px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  /*float:left;*/
+
+
+}
+
+/*____________paragraph_______________*/
+
+article.tweet p {
+  font-size: 12px;
+  position: relative;
+  bottom: 50px;
+  padding-right: 10px;
+  float:right;
+
+}
+
+
+/*____________footer_______________*/
+
+article.tweet .content {
+  /*overflow: hidden;*/
+  background-color: white;
+  padding: 10px;
+  /*background-color: white;*/
+  border-bottom: 1px solid #EEEEEE;
+  border-bottom-width: 1px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+
+}
+
+/*____________time_______________*/
+
+article.tweet footer {
+  padding: 5px;
+  padding-right:10px;
+  float:left;
+
+}
