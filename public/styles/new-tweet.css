@@ -64,6 +64,27 @@ span.counter{
 
 }
 
+
+/*_______________________error Message____________________*/
+
+#error {
+  color: red;
+  font-color: red;
+  bottom: 3px;
+  float: left;
+
+  margin-top:7px;
+  margin-left:10px;
+
+  position: relative;
+
+  display: none;
+
+  /*visibility: hidden;*/
+
+}
+
+
 /*_______________________posted tweet________________________*/
 
 article.tweet {

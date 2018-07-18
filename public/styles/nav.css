@@ -48,6 +48,40 @@ float:left;
 
 }
 
+
+
+#nav-bar #header-compose{
+  float: right;
+
+  margin: 6px;
+  margin-top: 10px;
+  width: 6em;
+  height: 3.5em;
+
+  border-radius: 10px;
+  border-style: groove;
+  border-width: 1px;
+
+  border-color: black;
+
+  color: #00A586;
+
+  font-color: #00A586;
+  background-color: #D2F6F6;
+  text-shadow: #EEEE00 0 0 0.5px;
+}
+#nav-bar #header-compose:hover{
+  /*border-color: black;*/
+  font-color: black;
+  color: black;
+  background-color: white;
+
+
+}
+
+
+
+
 /*main. --- Most important container*/
 main.container {
   padding-top: 0.2em;

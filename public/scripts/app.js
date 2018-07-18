@@ -1,4 +1,27 @@
 $(document).ready(function(){
+//word rapp
+// window.setInterval(loadTweets, 10000);
+//_____________remove trash________
+
+  function escape(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
+//___________Toggle newpost______________
+  var $toggle = $('#header-compose');
+  $toggle.on('click', function ( event ) {
+    $(".new-tweet").slideToggle();
+    $("#post-text").select();
+  });
+
+
+  // $(document).ready(function(){
+  //   $("button").click(function(){
+  //       $("p").slideToggle();
+  //   });
+
 
 //__________________load tweets________
 
@@ -11,49 +34,90 @@ function loadTweets() {
 });
 
 };
-
   loadTweets();
 
 //___________new post _______________
 
-$(function() {
-  var $button = $('#submitTweet');
-  $button.on('click', function ( event ) {
-    event.preventDefault();
-    console.log("button clicked, prevented event.");
-    const $serialOut = $(this).serialize();
-    console.log($serialOut);
-    $.post('/tweets', $serialOut, function(data, status){
-      console.log(data, status);
-    });
-    });
+  // $(function() {
+    var $button = $('#submitTweet');
+    $button.on('click', function ( event ) {
+      event.preventDefault();
+// let $posttext =
+      if($('#post-text').val() == '' || $('#post-text').val() == null) {
+        $("#error").text("Error: please enter in a message");
+        $("#error").slideDown();
+        // $('#error').css('visibility', 'visible');
+
+        // $(".new-tweet").slideToggle();
+
+
+
+      } else if($('#post-text').val().length >= 141) {
+          $("#error").text("Error: only post up to 140 characters");
+          $("#error").slideDown();
+
+          // $('#error').css('visibility', 'visible');
+
+
+          // return alert("You can only post up to 140 characters");
+
+       } else {
+
+        $("#error").slideUp();
+        // $('#error').css('visibility', 'hidden');
+        // $("#error").text("");
+
+
+      const $serialOut = $("#post-form").serialize();
+      console.log($serialOut);
+      $.post('/tweets', $serialOut, function(data, status){
+        console.log(data, status);
+
+        createTweetElement(data);
+
+        // $('#tweets-container').prepend(createTweetElement(data));
+      });
+
+    }
+
   });
+  // });
+  // });
 
 
 
 //___________Posting older tweets_________
 
-// function createTweetElement(obj){
-//   console.log('called');
-//   const userName = obj.user.name;
-//   const postContent = obj.content.text;
-//   const creationTime = obj.created_at;
-//   const postAvatar = obj.user.avatars['small'];
-//   const handle = obj.user.handle;
+function createTweetElement(obj){
+  // console.log('called');
+  const userName = obj.user.name;
+  const postContent = obj.content.text;
+  const creationTime = obj.created_at;
+  const postAvatar = obj.user.avatars['small'];
+  const handle = obj.user.handle;
 
-// $('#tweets-container').append(`
-//   <article class="tweet">
-//     <header>
-//       <img class="thumb" src= ${postAvatar} >
-//       <h1> ${userName} </h1>
-//       <p> ${handle} </p>
-//     </header>
-//     <div class="content"> ${postContent} </div>
-//     <footer>${creationTime}</footer>
-//   </article>`
-//   )
 
-// }
+
+
+  // ("<div class='content'>").html(postContent);
+
+ // <div class="content"> ${postContent} </div>
+
+ // {escape(textFromUser)}
+
+$('#tweets-container').prepend(`
+  <article class="tweet">
+    <header>
+      <img class="thumb" src= ${escape(postAvatar)} >
+      <h1> ${escape(userName)} </h1>
+      <p> ${escape(handle)} </p>
+    </header>
+    <div class="content"> ${escape(postContent)} </div>
+    <footer>${escape(creationTime)}</footer>
+  </article>`
+  )
+
+}
 
 // const tweetData = {
 //   "user": {
@@ -70,10 +134,9 @@ $(function() {
 //   },
 //   "created_at": 1461116232227
 // }
+// }
 
 //___________RENDERING TWEETS DAY 3_____________
-
-// loadTweets
 
   function renderTweets(obj) {
     console.log("testing",obj)
@@ -85,15 +148,15 @@ $(function() {
       const postAvatar = obj[i].user.avatars['small'];
       const handle = obj[i].user.handle;
 
-      $('#tweets-container').append(`
+      $('#tweets-container').prepend(`
         <article class="tweet">
           <header>
-            <img class="thumb" src= ${postAvatar} >
-            <h1> ${userName} </h1>
-            <p> ${handle} </p>
+            <img class="thumb" src= ${escape(postAvatar)} >
+            <h1> ${escape(userName)} </h1>
+            <p> ${escape(handle)} </p>
           </header>
-          <div class="content"> ${postContent} </div>
-          <footer>${creationTime}</footer>
+          <div class="content"> ${escape(postContent)} </div>
+          <footer>${escape(creationTime)}</footer>
         </article>`
       )
     });
