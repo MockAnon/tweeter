@@ -1,10 +1,42 @@
 $(document).ready(function(){
 
+//__________________load tweets________
+
+function loadTweets() {
+  $.ajax('/tweets', { method: 'GET' })
+  .then(function (getTweets) {
+  console.log(getTweets);
+  // return getTweets;
+  renderTweets(getTweets);
+});
+
+};
+
+  loadTweets();
+
+//___________new post _______________
+
+$(function() {
+  var $button = $('#submitTweet');
+  $button.on('click', function ( event ) {
+    event.preventDefault();
+    console.log("button clicked, prevented event.");
+    const $serialOut = $(this).serialize();
+    console.log($serialOut);
+    $.post('/tweets', $serialOut, function(data, status){
+      console.log(data, status);
+    });
+    });
+  });
+
+
+
+//___________Posting older tweets_________
+
 function createTweetElement(obj){
   console.log('called');
   const userName = obj.user.name;
   const postContent = obj.content.text;
-  // const creationTime = obj.created_at;
   const creationTime = obj.created_at;
   const postAvatar = obj.user.avatars['small'];
   const handle = obj.user.handle;
@@ -16,11 +48,8 @@ $('#tweets-container').append(`
       <h1> ${userName} </h1>
       <p> ${handle} </p>
     </header>
-
-
     <div class="content"> ${postContent} </div>
     <footer>${creationTime}</footer>
-
   </article>`
   )
 
@@ -42,37 +71,34 @@ const tweetData = {
   "created_at": 1461116232227
 }
 
-//_______________formattedTime_________
+//___________RENDERING TWEETS DAY 3_____________
 
-// var formatTime = function(unixTimestamp) {
-//     var dt = new Date(unixTimestamp * 1000);
+// loadTweets
 
-//     var hours = dt.getHours();
-//     var minutes = dt.getMinutes();
-//     var seconds = dt.getSeconds();
+  function renderTweets(obj) {
+    console.log("testing",obj)
 
-//     // the above dt.get...() functions return a single digit
-//     // so I prepend the zero here when needed
-//     if (hours < 10)
-//      hours = '0' + hours;
+    $.each(obj, function(i, val) {
+      const userName = obj[i].user.name;
+      const postContent = obj[i].content.text;
+      const creationTime = obj[i].created_at;
+      const postAvatar = obj[i].user.avatars['small'];
+      const handle = obj[i].user.handle;
 
-//     if (minutes < 10)
-//      minutes = '0' + minutes;
+      $('#tweets-container').append(`
+        <article class="tweet">
+          <header>
+            <img class="thumb" src= ${postAvatar} >
+            <h1> ${userName} </h1>
+            <p> ${handle} </p>
+          </header>
+          <div class="content"> ${postContent} </div>
+          <footer>${creationTime}</footer>
+        </article>`
+      )
+    });
+  }
 
-//     if (seconds < 10)
-//      seconds = '0' + seconds;
-
-//     return hours + ":" + minutes + ":" + seconds;
-// }
-
-// var formattedTime = formatTime(obj.created_at);
-
-
-////_____________
-
-function renderTweets(tweets) {
-
-}
-
-createTweetElement(tweetData);
+//____don't touch below____________
+  createTweetElement(tweetData);
 });
