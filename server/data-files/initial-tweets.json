@@ -1,6 +1,6 @@
 
 
-db.tweeter.insertMany([
+[
   {
     "user": {
       "name": "Newton",
