@@ -1,7 +1,9 @@
-"use strict";
+// "use strict";
 
 // Simulates the kind of delay we see with network or filesystem operations
-const simulateDelay = require("./util/simulate-delay");
+const simulateDelay = require("./util/simulate-delay").MongoClient;
+
+// const db = require("../index.js").MongoClient;
 
 // Defines helper functions for saving and getting tweets, using the database `db`
 module.exports = function makeDataHelpers(db) {
@@ -15,13 +17,19 @@ module.exports = function makeDataHelpers(db) {
       });
     },
 
-    // Get all tweets in `db`, sorted by newest first
+    // Get all tweets in `db`, sorted by newest first GET TWEETS
     getTweets: function(callback) {
-      simulateDelay(() => {
-        const sortNewestFirst = (a, b) => a.created_at - b.created_at;
-        callback(null, db.tweets.sort(sortNewestFirst));
-      });
+      db.collection("tweets").find().toArray(callback);
     }
 
-  };
-}
+
+
+
+      // db.tweeter.find();
+      // simulateDelay(() => {
+        // const sortNewestFirst = (a, b) => a.created_at - b.created_at;
+        // callback(null, db.tweets.sort(sortNewestFirst));
+//     }
+  }
+};
+
