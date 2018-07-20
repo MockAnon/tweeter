@@ -1,39 +1,60 @@
-textarea {
+.container main {
+
+
+}
+
+textarea{
   max-width: 100%;
   min-width: 90%;
-  width: 100%;
-  max-height: 400px;
+  width:100%;
   order: 1;
-  padding: 2;
+  padding:2;
+
 }
 
-button, html [type=button], [type=reset], [type=submit] {
-  /*  position: relative;
-    right: 150px;*/
+button, html [type="button"], [type="reset"], [type="submit"]{
+/*  position: relative;
+  right: 150px;*/
   float: left;
+
 }
 
-span.counter {
+
+span.counter{
   /*position: relative;*/
   /*left: 150px;*/
-  float: right;
-  margin-bottom: auto;
+  float:right;
+  margin-bottom:auto;
+
 }
 
-span.counter {
+
+span.counter{
   color: black;
+
 }
+
+
+
+
+
+
+
+
+
 
 .new-tweet {
   margin-right: 0.5em;
   margin-left: 0.5em;
   margin-bottom: 1em;
-  margin-top: 40px;
+  margin-top:40px;
+
   border-radius: 10px;
   border-style: groove;
   background-color: #EEEEEE;
   overflow: hidden;
-  padding: 0.5em;
+  padding:0.5em;
+
 }
 
 .new-tweet h2 {
@@ -41,53 +62,71 @@ span.counter {
   padding-left: 2em;
   border-bottom: 1px solid #000;
   border-bottom-width: 1px;
+
 }
 
+
 /*_______________________error Message____________________*/
+
 #error {
   color: red;
   font-color: red;
   bottom: 3px;
   float: left;
-  margin-top: 7px;
-  margin-left: 10px;
+
+  margin-top:7px;
+  margin-left:10px;
+
   position: relative;
+
   display: none;
+
   /*visibility: hidden;*/
+
 }
 
+
 /*_______________________posted tweet________________________*/
+
 article.tweet {
   margin-right: 0.4em;
   margin-left: 0.4em;
   margin-bottom: 2em;
   /*margin-top:40px;*/
+
   /*padding:0.5em;*/
+
   border-radius: 10px;
   border-style: groove;
   background-color: #F3F3F3;
   overflow: hidden;
   opacity: 0.9;
   /*border-color: grey;*/
+
 }
 
 /*____________THUMBNAILSSS_______________*/
-.thumb {
-  float: left;
-  width: 60px;
-  height: 60px;
-  padding: 5px;
-  border-radius: 10px;
+
+.thumb{
+  float:left;
+width:60px;
+height:60px;
+padding: 5px;
+border-radius: 10px;
 }
 
-article.tweet span {
-  overflow: hidden;
+
+article.tweet span{
+overflow: hidden;
+
 }
+
 
 article.tweet:hover {
   border-width: 4px;
   background-color: #EEEEEE;
   opacity: 1;
+
 }
 
 article.tweet h1 {
@@ -96,18 +135,24 @@ article.tweet h1 {
   padding-bottom: 20px;
   padding-top: 20px;
   /*float:left;*/
+
+
 }
 
 /*____________paragraph_______________*/
+
 article.tweet p {
   font-size: 12px;
   position: relative;
   bottom: 50px;
   padding-right: 10px;
-  float: right;
+  float:right;
+
 }
 
+
 /*____________footer_______________*/
+
 article.tweet .content {
   /*overflow: hidden;*/
   background-color: white;
@@ -117,13 +162,15 @@ article.tweet .content {
   border-bottom-width: 1px;
   padding-top: 20px;
   padding-bottom: 20px;
+
+
 }
 
 /*____________time_______________*/
+
 article.tweet footer {
   padding: 5px;
-  padding-right: 10px;
-  float: left;
-}
+  padding-right:10px;
+  float:left;
 
-/*# sourceMappingURL=new-tweet.css.map */
+}

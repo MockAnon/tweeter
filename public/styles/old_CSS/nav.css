@@ -1,60 +1,87 @@
+
 #header {
   font-size: 70px;
+
 }
 
 #nav-bar {
   background-color: #00a087;
   color: #e8fdff;
-  min-width: 400px;
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-top: 0em;
-  padding-bottom: 0em;
+
+
+
+  padding-left:2em;
+  padding-right:2em;
+  padding-top:0em;
+  padding-bottom:0em;
+
   height: 80px;
   width: 100%;
+
+
   margin-top: 0%;
+
   position: relative;
+
+
 }
 
-#nav-bar .logo {
-  width: 80px;
-  height: 80px;
-  float: left;
+#nav-bar .logo{
+width:80px;
+height:80px;
+float:left;
 }
 
-#nav-bar .header {
+
+#nav-bar .header{
   margin-top: 35px;
-  margin-left: 10px;
+  margin-left:10px;
+
   line-height: 10px;
+
   display: inline;
+
   font-size: 40px;
   vertical-align: middle;
-  float: left;
+  float:left;
   position: absolute;
+
+
 }
 
-#nav-bar #header-compose {
+
+
+#nav-bar #header-compose{
   float: right;
+
   margin: 6px;
   margin-top: 10px;
   width: 6em;
   height: 3.5em;
+
   border-radius: 10px;
   border-style: groove;
   border-width: 1px;
+
   border-color: black;
+
   color: #00A586;
+
   font-color: #00A586;
   background-color: #D2F6F6;
   text-shadow: #EEEE00 0 0 0.5px;
 }
-
-#nav-bar #header-compose:hover {
+#nav-bar #header-compose:hover{
   /*border-color: black;*/
   font-color: black;
   color: black;
   background-color: white;
+
+
 }
+
+
+
 
 /*main. --- Most important container*/
 main.container {
@@ -62,12 +89,14 @@ main.container {
   width: 450px;
   /*text-align: center;*/
   background-color: white;
+
   /*background-color: pink;*/
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 40px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:40px;
   border-radius: 2px;
   padding-bottom: 100%;
-}
 
-/*# sourceMappingURL=nav.css.map */
+
+
+}
