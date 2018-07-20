@@ -15,14 +15,3 @@ $(document).ready(function(){
     });
 
 });
-
-
-
-// document.getElementsByName("text").onclick = function(event){
-//   console.log("you are amaaaazginnng click text")
-// }
-
-
-// document.addEventListener("click", (event) => {
-//   console.log(event);
-// });
