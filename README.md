@@ -1,3 +1,7 @@
+!["screen shot of compose message"](https://github.com/MockAnon/tweeter/blob/master/docs/compose_message.png)
+!["screen shot of how to send message"](https://github.com/MockAnon/tweeter/blob/master/docs/send_message.png)
+
+
 # Tweeter Project
 
 Tweeter is a simple, single-page Twitter clone.
